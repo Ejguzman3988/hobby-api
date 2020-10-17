@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  start_time: 2020-10-17 00:42:55
+  end_time: 2020-10-17 00:42:55
+  total_time: 2020-10-17 00:42:55
+  date: 2020-10-17 00:42:55
+
+two:
+  type: 
+  start_time: 2020-10-17 00:42:55
+  end_time: 2020-10-17 00:42:55
+  total_time: 2020-10-17 00:42:55
+  date: 2020-10-17 00:42:55
