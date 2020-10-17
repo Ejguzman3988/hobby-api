@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 2020_10_17_044255) do
   create_table "timers", force: :cascade do |t|
     t.string "name"
     t.string "category"
-    t.datetime "start_time", default: "2020-10-17 05:41:02"
+    t.datetime "start_time", default: "2020-10-17 21:15:06"
     t.datetime "end_time"
     t.float "total_time"
-    t.string "date", default: "10/17/2020"
+    t.string "date", default: "2020-10-17"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
