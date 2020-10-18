@@ -12,7 +12,7 @@ gym = {
     category: 'Health',
     start_time: six,
     end_time: DateTime.new(2020, 10, 16, 7, 0, 0),
-    date: six.strftime('%m/%d/%Y')
+    date: Date.tomorrow.next 
 }
 
 seven = DateTime.new(2020,10,16,7,30,0)
@@ -21,7 +21,7 @@ work = {
     category: 'work',
     start_time: seven,
     end_time: DateTime.new(2020,10,16,12,30,0),
-    date: seven.strftime('%m/%d/%Y')
+    date: Date.tomorrow.next
 }
 
 noon = DateTime.new(2020,10,16,12,30,0)
@@ -30,7 +30,7 @@ job = {
     category: 'work',
     start_time: noon,
     end_time: DateTime.new(2020,10,16,14,0,0),
-    date: noon.strftime('%m/%d/%Y')
+    date: Date.tomorrow.next
 }
 
 four = DateTime.new(2020,10,16,16,0,0)
@@ -39,7 +39,7 @@ food = {
     category: 'lifestyle',
     start_time: four,
     end_time: DateTime.new(2020,10,16,18,0,0),
-    date: noon.strftime('%m/%d/%Y')
+    date: Date.tomorrow.next
 
 }
 

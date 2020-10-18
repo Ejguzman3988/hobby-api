@@ -6,7 +6,7 @@ class CreateTimers < ActiveRecord::Migration[6.0]
       t.datetime :start_time, default: DateTime.now
       t.datetime :end_time
       t.float :total_time
-      t.string :date, default: DateTime.now.strftime('%Y-%m-%d')
+      t.string :date, default: Date.today
 
       t.timestamps 
     end
