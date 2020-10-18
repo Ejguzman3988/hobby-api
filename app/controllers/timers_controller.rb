@@ -3,7 +3,7 @@ class TimersController < ApplicationController
 
   # GET /timers
   def index
-    @timers = Timer.all
+    @timers = User.find(params[:user_id]).timers
 
     render json: @timers
   end
@@ -46,6 +46,6 @@ class TimersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def timer_params
-      params.require(:timer).permit(:type, :start_time, :end_time, :total_time, :date)
+      params.require(:timer).permit(:user_id, :type, :start_time, :end_time, :total_time, :date)
     end
 end

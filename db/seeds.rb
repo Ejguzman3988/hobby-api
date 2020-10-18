@@ -5,9 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+user = User.create(email: 'test@test.com', password: 'testtest')
 
 six = DateTime.new(2020, 10, 16, 6, 0, 0)
 gym = {
+    user_id: user.id,
     name: 'Workout',
     category: 'Health',
     start_time: six,
@@ -17,6 +19,7 @@ gym = {
 
 seven = DateTime.new(2020,10,16,7,30,0)
 work = {
+    user_id: user.id,
     name: 'job',
     category: 'work',
     start_time: seven,
@@ -26,6 +29,7 @@ work = {
 
 noon = DateTime.new(2020,10,16,12,30,0)
 job = {
+    user_id: user.id,
     name: 'jobsearch',
     category: 'work',
     start_time: noon,
@@ -35,6 +39,7 @@ job = {
 
 four = DateTime.new(2020,10,16,16,0,0)
 food = {
+    user_id: user.id,
     name: 'Food Prep',
     category: 'lifestyle',
     start_time: four,
