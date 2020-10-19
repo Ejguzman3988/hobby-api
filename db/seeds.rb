@@ -57,10 +57,10 @@ Timer.create([
 ])
 
 
-Timer.all.each do |obj| 
-    obj.total_time = obj.end_time.utc - obj.start_time.utc
-    obj.save
-end
+# Timer.all.each do |obj| 
+#     obj.total_time = obj.end_time.localtime - obj.start_time.localtime
+#     obj.save
+# end
 
 # DateTime.new(2001,2,3,4,5,6)
 # DateTime: 2001-02-03T04:05:06+00:0
