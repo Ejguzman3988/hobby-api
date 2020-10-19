@@ -8,17 +8,38 @@ class TimersController < ApplicationController
     render json: @timers
   end
 
-  # GET /timers/1
+  # GET /users/1/daily
+  def daily
+    @timers = User.find(params[:user_id]).timers_at_date(Date.today)
+
+    render json: @timers
+  end
+
+  # GET /users/1/week
+  def weekly
+    @timers = User.find(params[:user_id]).week(Date.today)
+
+    render json: @timers
+  end
+
+  # GET /users/1/week
+  def monthly
+    @timers = User.find(params[:user_id]).monthly(Date.today)
+
+    render json: @timers
+  end
+
+  # GET /users/1/timers/1
   def show
     render json: @timer
   end
 
-  # POST /timers
+  # POST /users/1/timers
   def create
-    @timer = Timer.new(timer_params)
+    @timer = User.find(params[:user_id]).timers.new(timer_params)
 
     if @timer.save
-      render json: @timer, status: :created, location: @timer
+      render json: @timer
     else
       render json: @timer.errors, status: :unprocessable_entity
     end
@@ -46,6 +67,6 @@ class TimersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def timer_params
-      params.require(:timer).permit(:user_id, :type, :start_time, :end_time, :total_time, :date)
+      params.require(:timer).permit(:user_id, :name, :category, :start_time, :end_time, :total_time, :date)
     end
 end
