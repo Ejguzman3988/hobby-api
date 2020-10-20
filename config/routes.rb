@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get '/daily', to: 'timers#daily'
     get '/weekly', to: 'timers#weekly'
     get '/monthly', to: 'timers#monthly'
+    get '/categories', to: 'timers#categories'
   end
   post '/users/signin', to: 'users#signin'
 

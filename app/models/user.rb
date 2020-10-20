@@ -46,5 +46,13 @@ class User < ApplicationRecord
             end
         end.reject{|n| n==nil}.flatten.sort.reverse
     end
+
+    def categories
+        obj = []
+        self.timers.pluck(:category).each_with_index do |value, index|
+            obj.push({id: index,category: value})
+        end
+        return obj
+    end
     
 end

@@ -5,56 +5,57 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-user = User.create(email: 'test@test.com', password: 'testtest')
+user = User.find_by(email: 'test@test.com')
 
-six = DateTime.new(2020, 10, 19, 6, 0, 0)
-gym = {
-    user_id: user.id,
-    name: 'Workout',
-    category: 'Health',
-    start_time: six,
-    end_time: DateTime.new(2020, 10, 19, 7, 0, 0),
-    date: Date.today 
-}
+user.timers.create(name: "test@test", category: "Keal", start_time: DateTime.now.next.next, date: Date.today.next.next)
+# six = DateTime.new(2020, 10, 19, 6, 0, 0)
+# gym = {
+#     user_id: user.id,
+#     name: 'Workout',
+#     category: 'Health',
+#     start_time: six,
+#     end_time: DateTime.new(2020, 10, 19, 7, 0, 0),
+#     date: Date.today 
+# }
 
-seven = DateTime.new(2020,10,19,7,30,0)
-work = {
-    user_id: user.id,
-    name: 'job',
-    category: 'work',
-    start_time: seven,
-    end_time: DateTime.new(2020,10,19,12,30,0),
-    date: Date.today
-}
+# seven = DateTime.new(2020,10,19,7,30,0)
+# work = {
+#     user_id: user.id,
+#     name: 'job',
+#     category: 'work',
+#     start_time: seven,
+#     end_time: DateTime.new(2020,10,19,12,30,0),
+#     date: Date.today
+# }
 
-noon = DateTime.new(2020,10,19,12,30,0)
-job = {
-    user_id: user.id,
-    name: 'jobsearch',
-    category: 'work',
-    start_time: noon,
-    end_time: DateTime.new(2020,10,19,14,0,0),
-    date: Date.today
-}
+# noon = DateTime.new(2020,10,19,12,30,0)
+# job = {
+#     user_id: user.id,
+#     name: 'jobsearch',
+#     category: 'work',
+#     start_time: noon,
+#     end_time: DateTime.new(2020,10,19,14,0,0),
+#     date: Date.today
+# }
 
-four = DateTime.new(2020,10,19,16,0,0)
-food = {
-    user_id: user.id,
-    name: 'Food Prep',
-    category: 'lifestyle',
-    start_time: four,
-    end_time: DateTime.new(2020,10,19,18,0,0),
-    date: Date.today
+# four = DateTime.new(2020,10,19,16,0,0)
+# food = {
+#     user_id: user.id,
+#     name: 'Food Prep',
+#     category: 'lifestyle',
+#     start_time: four,
+#     end_time: DateTime.new(2020,10,19,18,0,0),
+#     date: Date.today
 
-}
+# }
 
 
-Timer.create([
-    gym,
-    work,
-    job,
-    food
-])
+# Timer.create([
+#     gym,
+#     work,
+#     job,
+#     food
+# ])
 
 
 # Timer.all.each do |obj| 
