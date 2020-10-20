@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 2020_10_18_090919) do
     t.bigint "user_id"
     t.string "name"
     t.string "category"
-    t.datetime "start_time", default: "2020-10-19 15:51:04"
+    t.datetime "start_time", default: "2020-10-20 17:51:10"
     t.datetime "end_time"
     t.float "total_time"
-    t.string "date", default: "2020-10-19"
+    t.string "date", default: "2020-10-20"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_timers_on_user_id"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2020_10_18_090919) do
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
-    t.string "free_time"
+    t.string "free_time", default: "0"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

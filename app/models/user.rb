@@ -49,7 +49,7 @@ class User < ApplicationRecord
 
     def categories
         obj = []
-        self.timers.pluck(:category).each_with_index do |value, index|
+        Timer.pluck(:category).each_with_index do |value, index|
             obj.push({id: index,category: value})
         end
         return obj

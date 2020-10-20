@@ -5,63 +5,86 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-user = User.find_by(email: 'test@test.com')
-
-user.timers.create(name: "test@test", category: "Keal", start_time: DateTime.now.next.next, date: Date.today.next.next)
-# six = DateTime.new(2020, 10, 19, 6, 0, 0)
-# gym = {
-#     user_id: user.id,
-#     name: 'Workout',
-#     category: 'Health',
-#     start_time: six,
-#     end_time: DateTime.new(2020, 10, 19, 7, 0, 0),
-#     date: Date.today 
-# }
-
-# seven = DateTime.new(2020,10,19,7,30,0)
-# work = {
-#     user_id: user.id,
-#     name: 'job',
-#     category: 'work',
-#     start_time: seven,
-#     end_time: DateTime.new(2020,10,19,12,30,0),
-#     date: Date.today
-# }
-
-# noon = DateTime.new(2020,10,19,12,30,0)
-# job = {
-#     user_id: user.id,
-#     name: 'jobsearch',
-#     category: 'work',
-#     start_time: noon,
-#     end_time: DateTime.new(2020,10,19,14,0,0),
-#     date: Date.today
-# }
-
-# four = DateTime.new(2020,10,19,16,0,0)
-# food = {
-#     user_id: user.id,
-#     name: 'Food Prep',
-#     category: 'lifestyle',
-#     start_time: four,
-#     end_time: DateTime.new(2020,10,19,18,0,0),
-#     date: Date.today
-
-# }
 
 
-# Timer.create([
-#     gym,
-#     work,
-#     job,
-#     food
-# ])
+categoryUser = User.create(email: "test@test.com", password: "testtest")
 
+collecting = {
+    name: "Collecting",
+    category:'Collecting'
+}
 
-# Timer.all.each do |obj| 
-#     obj.total_time = obj.end_time.localtime - obj.start_time.localtime
-#     obj.save
-# end
+arts = {
+    name: "Arts",
+    category:'Arts',
+}
+
+games = {
+    name: "Games",
+    category:'Games',
+}
+
+modelElectronics = {
+    name: "Model & Electronics",
+    category:'Model & Electronics',
+}
+
+performingArts = {
+    name: "performing arts",
+    category:'performing arts',
+}
+
+sportsOutdoor = {
+    name: "sports/outdoor",
+    category:'sports/outdoor',
+}
+
+music = {
+    name: "music",
+    category:'music',
+}
+
+spiritualMental = {
+    name: "spiritual & mental",
+    category:'spiritual & mental',
+}
+
+foodDrink = {
+    name: "food & drink",
+    category:'food & drink',
+}
+
+pets = {
+    name: "pets",
+    category:'pets',
+}
+
+work = {
+    name: "work",
+    category:'work',
+}
+
+entertainment = {
+    name: "Entertainment",
+    category:'Entertainment',
+}
+
+categoryUser.timers.create([
+    collecting,
+    arts,
+    games,
+    modelElectronics,
+    performingArts,
+    sportsOutdoor,
+    music,
+    spiritualMental,
+    foodDrink,
+    pets,
+    work,
+    entertainment
+])
+
+puts("success")
 
 # DateTime.new(2001,2,3,4,5,6)
 # DateTime: 2001-02-03T04:05:06+00:0
