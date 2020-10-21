@@ -4,10 +4,10 @@ class CreateTimers < ActiveRecord::Migration[6.0]
       t.belongs_to :user
       t.string :name
       t.string :category
-      t.datetime :start_time, default: DateTime.now.in_time_zone(ActiveSupport::TimeZone.new("Eastern Time (US & Canada)"))
+      t.datetime :start_time
       t.datetime :end_time
       t.float :total_time
-      t.string :date, default: Date.today.in_time_zone(ActiveSupport::TimeZone.new("Eastern Time (US & Canada)")).to_s.split(" ")[0]
+      t.string :date
 
       t.timestamps 
     end

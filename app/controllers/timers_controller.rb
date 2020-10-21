@@ -1,7 +1,8 @@
 class TimersController < ApplicationController
   before_action :set_timer, only: [:show, :update, :destroy]
   before_action :set_categories, only: [:categories]
-
+  before_action :set_default_start_and_date, :only => :create
+  
   # GET /timers
   def index
     @timers = User.find(params[:user_id]).timers
@@ -38,7 +39,6 @@ class TimersController < ApplicationController
 
   # POST /users/1/timers
   def create
-    @timer = User.find(params[:user_id]).timers.new(timer_params)
 
     if @timer.save
       render json: @timer
@@ -76,7 +76,13 @@ class TimersController < ApplicationController
     def set_categories
       @categories = User.find(params[:user_id]).categories
     end
+    
+    def set_default_start_and_date 
+      @timer = User.find(params[:user_id]).timers.new(timer_params)
+      @timer.start_time = DateTime.now.in_time_zone(ActiveSupport::TimeZone.new("Eastern Time (US & Canada)"))
+    end
 
+    
     # Only allow a trusted parameter "white list" through.
     def timer_params
       params.require(:timer).permit(:user_id, :name, :category, :start_time, :end_time, :total_time, :date)
