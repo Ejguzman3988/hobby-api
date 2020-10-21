@@ -12,62 +12,74 @@ categoryUser = User.first
 
 collecting = {
     name: "Collecting",
-    category:'Collecting'
+    category: 'Collecting',
+    
 }
 
 arts = {
     name: "Arts",
-    category:'Arts',
+    category: 'Arts',
+    
 }
 
 games = {
     name: "Games",
-    category:'Games',
+    category: 'Games',
+    
 }
 
 modelElectronics = {
     name: "Model & Electronics",
-    category:'Model & Electronics',
+    category: 'Model & Electronics',
+    
 }
 
 performingArts = {
     name: "performing arts",
-    category:'performing arts',
+    category: 'performing arts',
+    
 }
 
 sportsOutdoor = {
     name: "sports/outdoor",
-    category:'sports/outdoor',
+    category: 'sports/outdoor',
+    
 }
 
 music = {
     name: "music",
-    category:'music',
+    category: 'music',
+    
 }
 
 spiritualMental = {
     name: "spiritual & mental",
-    category:'spiritual & mental',
+    category: 'spiritual & mental',
+    
 }
 
 foodDrink = {
     name: "food & drink",
-    category:'food & drink',
+    category: 'food & drink',
+    
 }
 
 pets = {
     name: "pets",
-    category:'pets',
+    category: 'pets',
+    
 }
 
 work = {
     name: "work",
-    category:'work',
+    category: 'work',
+    
 }
 
 entertainment = {
     name: "Entertainment",
-    category:'Entertainment',
+    category: 'Entertainment',
+    
 }
 
 categoryUser.timers.create([

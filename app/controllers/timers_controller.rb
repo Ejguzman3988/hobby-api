@@ -49,7 +49,12 @@ class TimersController < ApplicationController
 
   # PATCH/PUT /timers/1
   def update
-    if @timer.update(timer_params)
+    zone = ActiveSupport::TimeZone.new("Eastern Time (US & Canada)")
+    start = params[:start_time].to_datetime.in_time_zone(zone)
+    end_time = params[:end_time].to_datetime.in_time_zone(zone)
+    date = params[:start_time].to_date.in_time_zone(zone).to_s.split(" ")[0]
+
+    if @timer.update(start_time: start, end_time: end_time, date: date)
       render json: @timer
     else
       render json: @timer.errors, status: :unprocessable_entity
@@ -65,7 +70,7 @@ class TimersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_timer
-      @timer = Timer.find(params[:id])
+      @timer = User.find(params[:user_id]).timers.find(params[:id])
     end
 
     def set_categories

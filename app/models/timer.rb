@@ -5,12 +5,15 @@ class Timer < ApplicationRecord
 
     def start_time=(time)
         super(time)
-        self.date = time.split('T')[0]
+        self.date = time.to_s.split('T')[0].split(" ")[0]
         self.save
     end
 
     def end_time=(time)
         super(time)
+        if(time.nil?)
+            return ''
+        end
         self.total_time = time.to_datetime.localtime - self.start_time.to_datetime.localtime 
         self.save
     end
