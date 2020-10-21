@@ -59,6 +59,7 @@ class TimersController < ApplicationController
   # DELETE /timers/1
   def destroy
     @timer.destroy
+    render json: "Success"
   end
 
   private

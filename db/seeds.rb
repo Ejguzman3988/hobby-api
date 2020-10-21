@@ -7,7 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-categoryUser = User.create(email: "test@test.com", password: "testtest")
+User.create(email: "test@test.com", password: "testtest")
+categoryUser = User.first
 
 collecting = {
     name: "Collecting",
