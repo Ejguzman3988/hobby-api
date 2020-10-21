@@ -5,7 +5,7 @@ class Timer < ApplicationRecord
 
     def end_time=(time)
         super(time)
-        self.total_time = time.localtime - self.start_time.localtime 
+        self.total_time = time.to_datetime.localtime - self.start_time.to_datetime.localtime 
         self.save
     end
 
