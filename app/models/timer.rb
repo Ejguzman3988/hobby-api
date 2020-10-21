@@ -7,7 +7,7 @@ class Timer < ApplicationRecord
         super(time)
         self.date = time.to_s.split('T')[0].split(" ")[0]
         self.save
-    end
+    end 
 
     def end_time=(time)
         super(time)

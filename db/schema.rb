@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 2020_10_18_090919) do
     t.bigint "user_id"
     t.string "name"
     t.string "category"
-    t.datetime "start_time", default: "2020-10-21 02:12:59"
+    t.datetime "start_time"
     t.datetime "end_time"
     t.float "total_time"
-    t.string "date", default: "2020-10-21"
+    t.string "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_timers_on_user_id"
